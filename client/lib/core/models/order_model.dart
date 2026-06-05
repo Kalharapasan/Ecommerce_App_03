@@ -24,5 +24,37 @@ class OrderItem {
   }
 }
 
+class OrderModel {
+  final int id;
+  final DateTime orderDate;
+  final String status;
+  final double totalAmount;
+  final String shippingAddress;
+  final String phoneNumber;
+  final List<OrderItem> items;
 
+  OrderModel({
+    required this.id,
+    required this.orderDate,
+    required this.status,
+    required this.totalAmount,
+    required this.shippingAddress,
+    required this.phoneNumber,
+    required this.items,
+  });
+
+  factory OrderModel.fromJson(Map<String, dynamic> json) {
+    var list = json['items'] as List;
+    List<OrderItem> itemsList = list.map((i) => OrderItem.fromJson(i)).toList();
+
+    return OrderModel(
+      id: json['id'],
+      orderDate: DateTime.parse(json['orderDate']),
+      status: json['status'],
+      totalAmount: json['totalAmount'].toDouble(),
+      shippingAddress: json['shippingAddress'],
+      phoneNumber: json['phoneNumber'],
+      items: itemsList,
+    );
+  }
 }
