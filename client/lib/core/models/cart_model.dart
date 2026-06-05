@@ -26,3 +26,26 @@ class CartItem {
     );
   }
 }
+
+class Cart {
+  final int id;
+  final List<CartItem> items;
+  final double totalAmount;
+
+  Cart({
+    required this.id,
+    required this.items,
+    required this.totalAmount,
+  });
+
+  factory Cart.fromJson(Map<String, dynamic> json) {
+    var list = json['items'] as List;
+    List<CartItem> itemsList = list.map((i) => CartItem.fromJson(i)).toList();
+
+    return Cart(
+      id: json['id'],
+      items: itemsList,
+      totalAmount: json['totalAmount'].toDouble(),
+    );
+  }
+}
