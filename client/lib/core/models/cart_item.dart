@@ -46,4 +46,28 @@ class CartItem {
       'created_at': createdAt.toIso8601String(),
     };
   }
+
+  CartItem copyWith({
+    String? id,
+    String? cartId,
+    String? productId,
+    String? productName,
+    String? productImage,
+    double? price,
+    int? quantity,
+    DateTime? createdAt,
+  }) {
+    return CartItem(
+      id: id ?? this.id,
+      cartId: cartId ?? this.cartId,
+      productId: productId ?? this.productId,
+      productName: productName ?? this.productName,
+      productImage: productImage ?? this.productImage,
+      price: price ?? this.price,
+      quantity: quantity ?? this.quantity,
+      createdAt: createdAt ?? this.createdAt,
+    );
+  }
+
+  double get total => price * quantity;
 }
