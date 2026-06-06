@@ -384,7 +384,7 @@ class _HomeScreenState extends State<HomeScreen> {
               min: 0,
               max: 1000,
               divisions: 20,
-              labels: const RangeLabels('$0', '$1000'),
+              labels: const RangeLabels(r'$0', r'$1000'),
               onChanged: (values) {},
               activeColor: const Color(0xFF0064D2),
             ),

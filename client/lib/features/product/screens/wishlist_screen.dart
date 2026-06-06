@@ -38,7 +38,7 @@ class WishlistScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final product = wishlist.items[index];
               return Card(
-                margin: const EdgeInsets.bottom(16),
+                margin: const EdgeInsets.only(bottom: 16),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                 child: ListTile(
                   contentPadding: const EdgeInsets.all(8),
