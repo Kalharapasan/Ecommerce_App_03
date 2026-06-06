@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ecom_ii/core/models/product.dart';
+import 'package:client/core/models/product.dart';
 
 class CartItem {
   final Product product;
