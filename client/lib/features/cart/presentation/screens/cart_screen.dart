@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:go_router/go_router.dart';
-import 'package:ecom_ii/features/cart/presentation/providers/cart_provider.dart';
-import 'package:ecom_ii/shared/widgets/primary_button.dart';
+import 'package:client/features/cart/presentation/providers/cart_provider.dart';
+import 'package:client/shared/widgets/primary_button.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -251,7 +250,7 @@ class CartScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       PrimaryButton(
-                        onPressed: () => context.go('/checkout'),
+                        onPressed: () => Navigator.pushNamed(context, '/checkout'),
                         text: 'Proceed to Checkout',
                       ),
                     ],

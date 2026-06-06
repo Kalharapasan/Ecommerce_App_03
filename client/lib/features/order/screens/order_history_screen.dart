@@ -37,7 +37,7 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
             itemBuilder: (context, index) {
               final order = orderProvider.orders[index];
               return Card(
-                margin: const EdgeInsets.bottom(16),
+                margin: const EdgeInsets.only(bottom: 16),
                 child: ExpansionTile(
                   title: Text('Order #${order.id}', style: const TextStyle(fontWeight: FontWeight.bold)),
                   subtitle: Text(DateFormat('MMM dd, yyyy').format(order.orderDate)),

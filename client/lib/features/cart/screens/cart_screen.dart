@@ -35,7 +35,7 @@ class _CartScreenState extends State<CartScreen> {
             return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                        margin: const EdgeInsets.bottom(16),
                   Icon(Icons.shopping_cart_outlined, size: 100, color: Colors.grey[300]),
                   const SizedBox(height: 20),
                   const Text('Your cart is empty', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
